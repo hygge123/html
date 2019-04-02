@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弹性布局</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        ul,li{
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            width: 100%;
+            background-color: darkgray;
+        }
+        .flex-box{
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            /*1.菜单栏的设置若是想让每个li 均分且撑满
+            1.1可以不用使用 space-around*/
+            /*justify-content: space-around;*/
+            background-color: pink;
+        }
+        li{
+            list-style-type: none;
+            /*list-style-type: lower-alpha;*/
+        }
+        .item{
+            /*width: calc(100% /4);*/
+            /*1.2可以在这里直接使用width 100%*/
+            width:100%;
+            text-align: center;
+            border: 1px solid darkgray;
+        }
+        .content{
+            width: 100%;
+        }
+
+        .contentBox{
+            width: 80%;
+            margin: 0 auto;
+            border: 1px solid black;
+            display: flex;
+            /*justify-content: space-around;*/
+            flex-wrap: wrap;
+            /*来确定弹性布局是否换行 ，默认的是不换行*/
+        }
+        .contentItem{
+            width: calc(100% /3);
+            padding:calc(100% /3 *0.01) calc(100% /3 *0.1) ;
+            text-align: center;
+            margin-top: 4px;
+            margin-bottom: 2px;
+        }
+        .content-img{
+            /*这里的百分比 这里的盒模型是border-box
+                这里的百分之百是容器 总的宽 - padding - border 的值
+           */
+            width: 100%;
+            /*如何让图片的尺寸跟着容器大小进行改变除了使用将图片设置为背景图片还可以使用百分比之*/
+            height: auto;
+        }
+        p{
+            word-break:normal;
+            /*white-space:pre-warp;*/
+            word-wrap:break-word;
+
+        }
+
+    </style>
+</head>
+<body>
+    <!--
+           这里主要本人主要总结的是目前自己经常使用到的弹性布局属性值，具体可参照链接
+
+    -->
+    <!--<a href="https://www.cnblogs.com/nuannuan7362/p/5823381.html">具体讲解</a>-->
+    <div class="box">
+        <!--导航栏-->
+     <header>
+         <ul class="flex-box">
+             <li class="item">菜单1</li>
+             <li class="item">菜单2</li>
+             <li class="item">菜单3</li>
+             <li class="item">菜单4</li>
+         </ul>
+     </header>
+        <div class="content">
+            <ul class="contentBox">
+                <li class="contentItem"><img src="./image/flower.jpg" alt="" class="content-img">
+                <p class="text">这是一段解说，这是一段花语解说，这是一段花语解说这是一段花语解说</p>
+                </li>
+                <li class="contentItem"><img src="./image/flower.jpg" alt="" class="content-img">
+                    <p class="text">这是一段解说，这是一段花语解说，这是一段花语解说这是一段花语解说</p>
+                </li>
+                <li class="contentItem"><img src="./image/flower.jpg" alt="" class="content-img">
+                    <p class="text">这是一段解说，这是一段花语解说，这是一段花语解说这是一段花语解说</p></li>
+                <li class="contentItem"><img src="./image/flower.jpg" alt="" class="content-img">
+                    <p class="text">这是一段解说，这是一段花语解说，这是一段花语解说这是一段花语解说</p></li>
+                <li class="contentItem"><img src="./image/flower.jpg" alt="" class="content-img">
+                    <p class="text">这是一段解说，这是一段花语解说，这是一段花语解说这是一段花语解说</p></li>
+                <li class="contentItem"><img src="./image/flower.jpg" alt="" class="content-img">
+                    <p class="text">这是一段解说，这是一段花语解说，这是一段花语解说这是一段花语解说</p></li>
+                <li class="contentItem"><img src="./image/flower.jpg" alt="" class="content-img">
+                    <p class="text">这是一段解说，这是一段花语解说，这是一段花语解说这是一段花语解说</p></li>
+                <li class="contentItem"><img src="./image/flower.jpg" alt="" class="content-img">
+                    <p class="text">这是一段解说，这是一段花语解说，这是一段花语解说这是一段花语解说</p></li>
+                <li class="contentItem"><img src="./image/flower.jpg" alt="" class="content-img">
+                    <p class="text">这是一段解说，这是一段花语解说，这是一段花语解说这是一段花语解说</p></li>
+                <li class="contentItem"><img src="./image/flower.jpg" alt="" class="content-img">
+                    <p class="text">这是一段解说，这是一段花语解说，这是一段花语解说这是一段花语解说</p></li>
+                <li class="contentItem"><img src="./image/flower.jpg" alt="" class="content-img">
+                    <p class="text">这是一段解说，这是一段花语解说，这是一段花语解说这是一段花语解说</p></li>
+                <li class="contentItem"><img src="./image/flower.jpg" alt="" class="content-img">
+                    <p class="text">这是一段解说，这是一段花语解说，这是一段花语解说这是一段花语解说</p></li>
+            </ul>
+
+        </div>
+
+    </div>
+</body>
+</html>
