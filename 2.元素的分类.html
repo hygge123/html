@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>元素的分类</title>
+</head>
+<style>
+    span{
+        /*内联元素设置宽高无效*/
+        /*width: 100px;*/
+        /*height:50px;*/
+        /*设置行高无效，，但是对整个html 有影响*/
+        /*line-height: 200px;*/
+        /*可以设置边框*/
+        border: 3px solid black;
+        /*margin 上下无效 左右有效*/
+        margin: 20px 20px;
+        /*设置padding 有效*/
+        /*padding: 10px 10px;*/
+        background-color: pink;
+    }
+    img{
+        width: 200px;
+        height: auto;
+        border: yellow solid 1px ;
+        padding: 20px;
+        margin: 20px;
+       /*以上效果均有效 行内块元素*/
+    }
+    .block{
+        /*一条线*/
+        border: solid 1px red;
+    }
+</style>
+<body>
+<div>
+    元素分为块元素，内联元素（即行内元素）
+    <span>内联元素</span>
+    <img src="./image/flower.jpg" alt="">
+    <!--img 和input 是常见的行内块元素-->
+    <div>
+        <input type="text"><button>按钮</button>
+    </div>
+    <div class="block">
+
+    </div>
+         <!--1.重设字体
+            将行内元素的直接父级设置font-size=0px;再给行内元素设置字体大小就可以解决。-->
+
+         <!--块元素主要有div   p 标签 h1标签 表格 table form 表格-->
+         <!--行内块标签 主要有 img input button-->
+          <!--行内元素 span 一些功能标签 修饰性 strong  bold a b label textarea-->
+            <!--行内元素主要是
+            1.设置宽高无效
+            2.设置行高无效
+            3.设置margin值上下无效左右有效
+            4.设置padding值有效
+            -->
+    <!--块元素
+        1.设置都有效
+        2.默认宽度等于其父元素的宽度
+        3.高度默认是其子元素的高度
+    -->
+
+</div>
+</body>
+</html>

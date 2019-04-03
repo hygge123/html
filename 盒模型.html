@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>盒模型</title>
+</head>
+<body>
+    <h1>盒模型</h1>
+    <p>盒模型基本构成由里向外依次是content、padding、border、margin</p>
+    <p>分为标准模型，和ie模型</p>
+    <img src="./image/标准模型.png" alt="">
+    <img src="./image/ie模型.png" alt="">
+    <div>
+        <p>盒模型标准型 即 盒子的宽宽高只是 为content的宽高</p>
+        <p>而 ie模型的  即盒子的宽高为  content + padding + border</p>
+        <p>这里应注意的是子元素的宽高若是设置为父元素的百分比，则百分比是父元素的content部分的百分比</p>
+    </div>
+<h2>如何设置</h2>
+<div>
+    /* 标准模型 */
+    box-sizing:content-box;
+
+    /*IE模型*/
+    box-sizing:border-box;
+</div>
+<h2>边距重叠问题以及bfc解决方案</h2>
+<div>
+    一般情况下是相邻的边距重叠取最大值
+    <a href="https://www.cnblogs.com/libin-1/p/7098468.html">bfc方案详情</a>
+    <div>
+        BFC 即 块级格式化上下文
+        定义：浮动元素和绝对定位元素，非块级盒子的块级容器（例如 inline-blocks, table-cells, 和 table-captions），以及           overflow值不为“visiable”的块级盒子，都会为他们的内容创建新的BFC（块级格式上下文）。
+        实现bfc 的条件
+        1.float 不为none；
+        2.元素position设置不为static 或者是relative；
+        3.display不为block的元素
+        4.overflow 不为visible
+       <h2>BFC的作用</h2>
+        <div>
+            <ul>
+                <li>解决边距重叠问题</li>
+                <li>使用BFC避免文字环绕</li>
+                <li>在多列布局中使用BFC</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>
