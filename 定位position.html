@@ -86,6 +86,15 @@
         其中3.1 和3.3 是脱离了文档流
      特别注意position: sticky 对 table 元素table-*-group, table-row, table-column, table-cell, table-caption 的效果
      与 position: relative 相同，都是无效的。
+    4.z-index 只与 定位元素 即非static定位元素有效
+      且z-index 值大的覆盖在值小的元素上
+      基本原理是z-index 的值可以控制定位元素位在与屏幕垂直方向（z轴）上的堆叠顺序
+      首先声明：z-index只能在position属性值为relative或absolute或fixed的元素上有效。
+      基本原理是：z-index的值可以控制定位元素在垂直于显示屏幕方向（z轴）上的堆叠顺序(stack order),值大的元素发生重叠时会在值小的元素上面
+
+
+
+
 -->
 <!--以下是position的sticky定位-->
 <!--ctrl + alt +L 是代码格式化-->
