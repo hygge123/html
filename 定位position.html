@@ -3,21 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <title>position定位</title>
+    <style>
+        /*.box{*/
+            /*height:150px;*/
+            /*!*padding:10px;*!*/
+            /*border: 1px solid red;*/
+            /*overflow:  scroll;*/
+        /*}*/
+        /*dl{*/
+            /*margin: 0;*/
+            /*padding: 24px 0 0 0;*/
+            /*!*padding: 2px;*!*/
+            /*!*border: 1px solid black;*!*/
+        /*}*/
+        /*dt{*/
+            /*width: 100%;*/
+            /*height: 20px;*/
+            /*position: sticky;*/
+            /*top: 0;*/
+            /*background-color: darkgray;*/
+            /*color: blueviolet;*/
+            /*border: 1px solid black;*/
+        /*}*/
+        /*dd{*/
+            /*width: 100%;*/
+            /*height: 20px;*/
+            /*padding: 10px;*/
+
+        /*}*/
+
+        * {
+            box-sizing: border-box;
+        }
+
+        dl {
+            margin: 0;
+            /*这里的padding值就很重要了*/
+            padding: 24px 0 0 0;
+        }
+
+        dt {
+            background: #B8C1C8;
+            border-bottom: 1px solid #989EA4;
+            border-top: 1px solid #717D85;
+            color: #FFF;
+            font: bold 18px/21px Helvetica, Arial, sans-serif;
+            /*margin: 0 0 20px 0;*/
+            padding: 2px 0 0 12px;
+            position: -webkit-sticky;
+            position: sticky;
+            /*这里为什么是-1呢
+            不能为正值，若为正值时怎会有不太妙的现象发生
+            为0 时不太好看 只有-1 时刚刚好
+            */
+            top: -1px;
+        }
+
+        dd {
+            font: bold 20px/45px Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0 0 0 12px;
+            /*不换行，文本会在同一行上继续，直到遇到换行符*/
+            /*还有一个常用的值 normal 默认的空白会被浏览器忽略*/
+            /*pre 空白将会被保留*/
+            white-space: nowrap;
+        }
+
+        dd + dd {
+            border-top: 1px solid #CCC
+        }
+    </style>
 </head>
 <body>
 <!--1.文档流概念：网页里面的元素就类似与汽车，流则相当于交通规则
     2.脱离文档流，即元素不按照约束规则来进行排列
     3.position 定位一般有absolute relative static inherit
-      3.1.absolute 定位是相对于第一个非static元素进行定位
+      3.1.absolute 定位是相对于非static定位的父元素进行定位，如果没有这样的祖先元素，则按照其根级容器进行定位
       3.2relative 定位是相对于自身来进行定位的
       3.3fixed 固定定位 相对于浏览器窗口
       3.4static 正常元素 不脱离文档流
       3.5sticky css3新属性，它的表现就像position:relative和position:fixed的合体；
-
         其中3.1 和3.3 是脱离了文档流
-        3.5 暂时没有做过相关项目就先这样吧
+     特别注意position: sticky 对 table 元素table-*-group, table-row, table-column, table-cell, table-caption 的效果
+     与 position: relative 相同，都是无效的。
 -->
-<div>
+<!--以下是position的sticky定位-->
+<!--ctrl + alt +L 是代码格式化-->
+<div class="box">
+    <dl>
+        <dt>A</dt>
+        <dd>apple</dd>
+        <dd>area</dd>
+        <dd>apple</dd>
+        <dd>area</dd>
+    </dl>
+    <dl>
+        <dt>B</dt>
+        <dd>bread</dd>
+        <dd>bear</dd>
+        <dd>black</dd>
+        <dd>bread</dd>
+        <dd>bear</dd>
+        <dd>black</dd>
+        <dd>bear</dd>
+        <dd>black</dd>
+        <dd>bread</dd>
+        <dd>bear</dd>
+        <dd>black</dd>
+
+    </dl>
+    <dl>
+        <dt>C</dt>
+        <dd>column</dd>
+        <dd>color</dd>
+        <dd>column</dd>
+        <dd>color</dd>
+    </dl>
+    <dl>
+        <dt>D</dt>
+        <dd>column</dd>
+        <dd>color</dd>
+    </dl>
+    <dl>
+        <dt>E</dt>
+        <dd>column</dd>
+        <dd>color</dd>
+        <dd>column</dd>
+        <dd>color</dd>
+    </dl>
 
 </div>
 </body>
